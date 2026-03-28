@@ -1,0 +1,270 @@
+{
+  "events": [
+    {
+      "id": "mayfest-2026",
+      "name": "Mayfest",
+      "startDate": "2026-05-15",
+      "endDate": "2026-05-17",
+      "location": "Lincoln Park",
+      "price": "free",
+      "category": "Festival"
+    },
+    {
+      "id": "ravinia-opener-2026",
+      "name": "Ravinia Season Opener",
+      "startDate": "2026-05-29",
+      "endDate": null,
+      "dateTBA": true,
+      "location": "Highland Park",
+      "price": "ticketed",
+      "category": "Music"
+    },
+    {
+      "id": "greek-fest-2026",
+      "name": "Lincoln Park Greek Fest",
+      "startDate": "2026-06-05",
+      "endDate": "2026-06-07",
+      "location": "Lincoln Park",
+      "price": "free",
+      "category": "Food & Drink"
+    },
+    {
+      "id": "grant-park-music-2026",
+      "name": "Grant Park Music Festival",
+      "startDate": "2026-06-10",
+      "endDate": "2026-08-15",
+      "location": "Millennium Park",
+      "price": "free",
+      "category": "Music"
+    },
+    {
+      "id": "midsommarfest-2026",
+      "name": "Andersonville Midsommarfest",
+      "startDate": "2026-06-12",
+      "endDate": "2026-06-14",
+      "location": "Andersonville",
+      "price": "free",
+      "category": "Festival"
+    },
+    {
+      "id": "pride-parade-2026",
+      "name": "Chicago Pride Parade",
+      "startDate": "2026-06-28",
+      "endDate": null,
+      "location": "Lakeview & Lincoln Park",
+      "price": "free",
+      "category": "Festival"
+    },
+    {
+      "id": "taste-of-chicago-2026",
+      "name": "Taste of Chicago",
+      "startDate": "2026-07-08",
+      "endDate": "2026-07-12",
+      "location": "Grant Park",
+      "price": "free",
+      "category": "Food & Drink"
+    },
+    {
+      "id": "smokeout-2026",
+      "name": "Windy City Smokeout",
+      "startDate": "2026-07-08",
+      "endDate": "2026-07-12",
+      "location": "United Center area",
+      "price": "ticketed",
+      "category": "Music"
+    },
+    {
+      "id": "taste-lincoln-ave-2026",
+      "name": "Taste of Lincoln Avenue",
+      "startDate": "2026-07-25",
+      "endDate": "2026-07-26",
+      "estimated": true,
+      "location": "Lincoln Park",
+      "price": "ticketed",
+      "category": "Food & Drink"
+    },
+    {
+      "id": "lollapalooza-2026",
+      "name": "Lollapalooza",
+      "startDate": "2026-07-30",
+      "endDate": "2026-08-02",
+      "location": "Grant Park",
+      "price": "ticketed",
+      "category": "Music"
+    },
+    {
+      "id": "market-days-2026",
+      "name": "Northalsted Market Days",
+      "startDate": "2026-08-07",
+      "endDate": "2026-08-09",
+      "location": "Lakeview",
+      "price": "ticketed",
+      "category": "Festival"
+    },
+    {
+      "id": "air-water-show-2026",
+      "name": "Chicago Air & Water Show",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-16",
+      "location": "North Avenue Beach",
+      "price": "free",
+      "category": "Outdoor"
+    },
+    {
+      "id": "bucktown-arts-2026",
+      "name": "Bucktown Arts Fest",
+      "startDate": "2026-08-22",
+      "endDate": "2026-08-23",
+      "estimated": true,
+      "location": "Bucktown",
+      "price": "free",
+      "category": "Arts & Culture"
+    },
+    {
+      "id": "taco-fest-2026",
+      "name": "Lakeview Taco Fest",
+      "startDate": "2026-08-22",
+      "endDate": "2026-08-23",
+      "estimated": true,
+      "location": "Lakeview",
+      "price": "ticketed",
+      "category": "Food & Drink"
+    },
+    {
+      "id": "house-music-fest-2026",
+      "name": "Chicago House Music Festival",
+      "startDate": "2026-08-27",
+      "endDate": "2026-08-30",
+      "location": "Millennium Park",
+      "price": "free",
+      "category": "Music"
+    },
+    {
+      "id": "jazz-fest-2026",
+      "name": "Chicago Jazz Festival",
+      "startDate": "2026-09-03",
+      "endDate": "2026-09-06",
+      "location": "Millennium Park",
+      "price": "free",
+      "category": "Music"
+    },
+    {
+      "id": "bike-the-drive-2026",
+      "name": "Bike the Drive",
+      "startDate": "2026-09-06",
+      "endDate": null,
+      "location": "Lake Shore Drive",
+      "price": "free",
+      "category": "Outdoor"
+    },
+    {
+      "id": "chicago-gourmet-2026",
+      "name": "Chicago Gourmet",
+      "startDate": "2026-09-01",
+      "endDate": null,
+      "dateTBA": true,
+      "location": "Millennium Park",
+      "price": "ticketed",
+      "category": "Food & Drink"
+    },
+    {
+      "id": "wine-fest-2026",
+      "name": "Lincoln Park Wine Festival",
+      "startDate": "2026-10-09",
+      "endDate": "2026-10-11",
+      "location": "Lincoln Park",
+      "price": "ticketed",
+      "category": "Food & Drink"
+    },
+    {
+      "id": "open-house-chicago-2026",
+      "name": "Open House Chicago",
+      "startDate": "2026-10-10",
+      "endDate": "2026-10-11",
+      "estimated": true,
+      "location": "Citywide",
+      "price": "free",
+      "category": "Arts & Culture"
+    },
+    {
+      "id": "film-fest-2026",
+      "name": "Chicago International Film Festival",
+      "startDate": "2026-10-14",
+      "endDate": "2026-10-25",
+      "estimated": true,
+      "location": "Various Theaters",
+      "price": "ticketed",
+      "category": "Arts & Culture"
+    },
+    {
+      "id": "spooky-zoo-2026",
+      "name": "Spooky Zoo Spectacular",
+      "startDate": "2026-10-17",
+      "endDate": "2026-10-18",
+      "estimated": true,
+      "location": "Lincoln Park Zoo",
+      "price": "free",
+      "category": "Outdoor"
+    },
+    {
+      "id": "nightmare-clark-2026",
+      "name": "Nightmare on Clark Street",
+      "startDate": "2026-10-24",
+      "endDate": "2026-10-31",
+      "estimated": true,
+      "location": "Lakeview",
+      "price": "ticketed",
+      "category": "Festival"
+    }
+  ],
+  "recurring": [
+    {
+      "id": "live-on-lake-2026",
+      "name": "Live on the Lake",
+      "schedule": "May–Sep",
+      "location": "Navy Pier",
+      "price": "free",
+      "category": "Music"
+    },
+    {
+      "id": "mp-music-series-2026",
+      "name": "Millennium Park Summer Music Series",
+      "schedule": "Jun 15–Aug 6",
+      "location": "Jay Pritzker Pavilion",
+      "price": "free",
+      "category": "Music"
+    },
+    {
+      "id": "mp-film-series-2026",
+      "name": "Millennium Park Summer Film Series",
+      "schedule": "Jul 1–Aug 19",
+      "location": "Jay Pritzker Pavilion",
+      "price": "free",
+      "category": "Arts & Culture"
+    },
+    {
+      "id": "farmers-markets-2026",
+      "name": "Chicago Farmers Markets",
+      "schedule": "May–Oct",
+      "location": "Citywide",
+      "price": "free",
+      "category": "Outdoor"
+    },
+    {
+      "id": "mp-workouts-2026",
+      "name": "Millennium Park Summer Workouts",
+      "schedule": "Saturdays May 16–Sep 5",
+      "location": "Millennium Park",
+      "price": "free",
+      "category": "Outdoor"
+    },
+    {
+      "id": "outdoor-movies-lp-2026",
+      "name": "Outdoor Movies in Lincoln Park",
+      "schedule": "Summer 2026",
+      "location": "Lincoln Park",
+      "price": "free",
+      "category": "Arts & Culture"
+    }
+  ]
+}
