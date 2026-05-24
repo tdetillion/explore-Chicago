@@ -48,7 +48,7 @@ a {
 /* ===== HEADER ===== */
 .header {
   background-color: var(--navy);
-  padding: 1rem 2rem;
+  padding: 0.875rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,6 +58,7 @@ a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .header__stars {
@@ -81,18 +82,28 @@ a {
 
 .header__nav {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0.125rem;
 }
 
 .header__nav-link {
-  font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.25rem 0.4375rem;
+  border-radius: 3px;
   transition: color 0.15s ease;
+  white-space: nowrap;
 }
 
-.header__nav-link:hover,
-.header__nav-link.active {
+.header__nav-link:hover {
   color: var(--white);
+}
+
+.header__nav-sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
+  padding: 0 0.0625rem;
+  user-select: none;
 }
 
 /* ===== HERO ===== */
@@ -170,50 +181,6 @@ a {
   border-color: var(--navy);
 }
 
-/* ===== MONTH JUMP NAV ===== */
-.month-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.25rem 0.125rem;
-  padding: 0.625rem 2rem;
-  background-color: var(--cream);
-  border-bottom: 1px solid var(--border-gray);
-}
-
-.month-nav__link {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--navy);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.15s ease;
-}
-
-.month-nav__link:hover {
-  background-color: rgba(0, 63, 107, 0.08);
-}
-
-.month-nav__sep {
-  font-size: 0.8125rem;
-  color: var(--border-gray);
-  padding: 0 0.125rem;
-  user-select: none;
-}
-
-/* ===== VENUE CARDS ===== */
-.venue-card__desc {
-  font-size: 0.75rem;
-  color: var(--muted-text);
-  line-height: 1.4;
-  margin: 0 0 0.25rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
 /* ===== MAIN CONTENT ===== */
 .main {
   max-width: 1000px;
@@ -223,7 +190,7 @@ a {
 
 /* ===== MONTH SECTION ===== */
 .month-section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .month-header {
@@ -231,7 +198,7 @@ a {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--navy);
-  margin-bottom: 1rem;
+  margin-bottom: 0.875rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--border-gray);
 }
@@ -240,7 +207,7 @@ a {
 .event-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .event-card {
@@ -251,7 +218,7 @@ a {
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.2s ease;
-  height: 160px;
+  height: 120px;
 }
 
 .event-card:hover {
@@ -260,7 +227,7 @@ a {
 
 /* Banner with date — color applied inline from month */
 .event-card__banner {
-  height: 55px;
+  height: 42px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -271,14 +238,18 @@ a {
 }
 
 .event-card__date-main {
-  font-size: 1.1rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--white);
   line-height: 1.2;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .event-card__date-year {
-  font-size: 0.6875rem;
+  font-size: 0.5625rem;
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -287,15 +258,15 @@ a {
 /* External link icon in banner corner */
 .event-card__link-icon {
   position: absolute;
-  top: 5px;
-  right: 6px;
+  top: 4px;
+  right: 5px;
   opacity: 0.65;
   line-height: 0;
 }
 
 .event-card__link-icon svg {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
 }
 
 a.event-card:hover .event-card__link-icon {
@@ -304,7 +275,7 @@ a.event-card:hover .event-card__link-icon {
 
 /* Card body */
 .event-card__body {
-  padding: 0.5rem 0.625rem;
+  padding: 0.375rem 0.5rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -312,11 +283,11 @@ a.event-card:hover .event-card__link-icon {
 }
 
 .event-card__name {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--navy);
   line-height: 1.3;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.125rem 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -326,15 +297,15 @@ a.event-card:hover .event-card__link-icon {
 .event-card__footer {
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: 0.3rem;
   margin-top: auto;
 }
 
 .event-card__location {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  font-size: 0.75rem;
+  gap: 0.2rem;
+  font-size: 0.6875rem;
   color: var(--muted-text);
   flex: 1;
   min-width: 0;
@@ -347,8 +318,8 @@ a.event-card:hover .event-card__link-icon {
 }
 
 .event-card__location svg {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   flex-shrink: 0;
   opacity: 0.6;
 }
@@ -356,13 +327,13 @@ a.event-card:hover .event-card__link-icon {
 .event-card__tags {
   display: flex;
   flex-wrap: nowrap;
-  gap: 0.25rem;
+  gap: 0.2rem;
   flex-shrink: 0;
 }
 
 .tag {
-  font-size: 0.625rem;
-  padding: 0.125rem 0.375rem;
+  font-size: 0.5625rem;
+  padding: 0.1rem 0.3125rem;
   border-radius: 0.75rem;
   font-weight: 500;
   white-space: nowrap;
@@ -381,6 +352,18 @@ a.event-card:hover .event-card__link-icon {
 .tag--category {
   background-color: #F3F4F6;
   color: #4B5563;
+}
+
+/* ===== VENUE CARDS ===== */
+.venue-card__desc {
+  font-size: 0.6875rem;
+  color: var(--muted-text);
+  line-height: 1.4;
+  margin: 0 0 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ===== FOOTER ===== */
@@ -437,11 +420,20 @@ a.event-card:hover .event-card__link-icon {
   }
 
   .event-card {
-    height: 150px;
+    height: 112px;
   }
 
   .event-card__banner {
-    height: 50px;
+    height: 38px;
+  }
+
+  .header__nav {
+    gap: 0;
+  }
+
+  .header__nav-link {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.3125rem;
   }
 }
 
@@ -456,12 +448,16 @@ a.event-card:hover .event-card__link-icon {
 
   .event-cards {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 
   .event-card {
     height: auto;
-    min-height: 150px;
+    min-height: 120px;
+  }
+
+  .header__nav {
+    display: none;
   }
 
   .footer__content {
