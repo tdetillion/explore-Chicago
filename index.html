@@ -20,20 +20,7 @@
       </span>
     </a>
     <nav class="header__nav">
-      <a href="#month-may" class="header__nav-link">May</a>
-      <span class="header__nav-sep">·</span>
-      <a href="#month-jun" class="header__nav-link">Jun</a>
-      <span class="header__nav-sep">·</span>
-      <a href="#month-jul" class="header__nav-link">Jul</a>
-      <span class="header__nav-sep">·</span>
-      <a href="#month-aug" class="header__nav-link">Aug</a>
-      <span class="header__nav-sep">·</span>
-      <a href="#month-sep" class="header__nav-link">Sep</a>
-      <span class="header__nav-sep">·</span>
-      <a href="#month-oct" class="header__nav-link">Oct</a>
-      <span class="header__nav-sep">·</span>
-      <a href="#month-recurring" class="header__nav-link">Recurring</a>
-      <span class="header__nav-sep">·</span>
+      <a href="index.html" class="header__nav-link active">Events</a>
       <a href="venues.html" class="header__nav-link">Venues</a>
     </nav>
   </header>
@@ -46,15 +33,33 @@
     </div>
   </section>
 
-  <!-- Filter Tags -->
-  <div class="filters">
-    <button class="filter-tag active" data-filter="all">All</button>
-    <button class="filter-tag" data-filter="free">Free</button>
-    <button class="filter-tag" data-filter="Music">Music</button>
-    <button class="filter-tag" data-filter="Food & Drink">Food & Drink</button>
-    <button class="filter-tag" data-filter="Outdoor">Outdoor</button>
-    <button class="filter-tag" data-filter="Arts & Culture">Arts & Culture</button>
-    <button class="filter-tag" data-filter="Festival">Festival</button>
+  <!-- Dropdown Filters -->
+  <div class="dropdowns">
+    <div class="dropdown-group">
+      <label class="dropdown-label" for="filter-month">Month</label>
+      <select class="dropdown" id="filter-month">
+        <option value="all">All Months</option>
+        <option value="may">May</option>
+        <option value="jun">June</option>
+        <option value="jul">July</option>
+        <option value="aug">August</option>
+        <option value="sep">September</option>
+        <option value="oct">October</option>
+        <option value="recurring">Recurring</option>
+      </select>
+    </div>
+    <div class="dropdown-group">
+      <label class="dropdown-label" for="filter-category">Category</label>
+      <select class="dropdown" id="filter-category">
+        <option value="all">All Categories</option>
+        <option value="free">Free</option>
+        <option value="Music">Music</option>
+        <option value="Food &amp; Drink">Food &amp; Drink</option>
+        <option value="Outdoor">Outdoor</option>
+        <option value="Arts &amp; Culture">Arts &amp; Culture</option>
+        <option value="Festival">Festival</option>
+      </select>
+    </div>
   </div>
 
   <!-- Main Content -->
@@ -82,7 +87,8 @@
     const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const FULL_MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    const MONTH_IDS = { 4: 'month-may', 5: 'month-jun', 6: 'month-jul', 7: 'month-aug', 8: 'month-sep', 9: 'month-oct' };
+    const MONTH_IDS  = { 4: 'month-may', 5: 'month-jun', 6: 'month-jul', 7: 'month-aug', 8: 'month-sep', 9: 'month-oct' };
+    const MONTH_NUMS = { may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9 };
 
     const MONTH_COLORS = {
       4: '#2D7A3A',
@@ -98,7 +104,6 @@
 
     let allEvents = [];
     let allRecurring = [];
-    let currentFilter = 'all';
 
     async function loadEvents() {
       try {
@@ -106,7 +111,7 @@
         const data = await response.json();
         allEvents = data.events;
         allRecurring = data.recurring || [];
-        renderEvents(allEvents);
+        renderEvents(allEvents, allRecurring);
       } catch (error) {
         console.error('Error loading events:', error);
         document.getElementById('events-container').innerHTML =
@@ -138,117 +143,73 @@
       return { dateText: `${startMonth} ${startDay}`, year: start.getFullYear() };
     }
 
-    function renderEvents(events) {
-      const container = document.getElementById('events-container');
+    function makeCard(event, bannerColor, dateText, yearText) {
+      const priceTag = event.price === 'free'
+        ? '<span class="tag tag--free">Free</span>'
+        : '<span class="tag tag--ticketed">Ticketed</span>';
+      const linkIcon = event.link
+        ? `<span class="event-card__link-icon">${EXTERNAL_LINK_ICON}</span>`
+        : '';
+      const cardOpen = event.link
+        ? `<a href="${event.link}" target="_blank" rel="noopener noreferrer" class="event-card">`
+        : `<article class="event-card">`;
+      const cardClose = event.link ? `</a>` : `</article>`;
+      return `
+        ${cardOpen}
+          <div class="event-card__banner" style="background-color:${bannerColor}">
+            <span class="event-card__date-main">${dateText}</span>
+            ${yearText ? `<span class="event-card__date-year">${yearText}</span>` : ''}
+            ${linkIcon}
+          </div>
+          <div class="event-card__body">
+            <h3 class="event-card__name">${event.name}</h3>
+            <div class="event-card__footer">
+              <div class="event-card__location">
+                ${PIN_ICON}
+                <span>${event.location}</span>
+              </div>
+              <div class="event-card__tags">
+                ${priceTag}
+                <span class="tag tag--category">${event.category}</span>
+              </div>
+            </div>
+          </div>
+        ${cardClose}
+      `;
+    }
 
-      // Group events by month
+    function renderEvents(events, recurringEvents) {
+      const container = document.getElementById('events-container');
       const eventsByMonth = {};
 
       events.forEach(event => {
         const date = new Date(event.startDate);
         const key = `${date.getFullYear()}-${String(date.getMonth()).padStart(2, '0')}`;
-        if (!eventsByMonth[key]) {
-          eventsByMonth[key] = [];
-        }
+        if (!eventsByMonth[key]) eventsByMonth[key] = [];
         eventsByMonth[key].push(event);
       });
 
-      // Sort months chronologically
-      const sortedMonths = Object.keys(eventsByMonth).sort();
-
       let html = '';
 
-      sortedMonths.forEach(monthKey => {
+      Object.keys(eventsByMonth).sort().forEach(monthKey => {
         const [year, month] = monthKey.split('-').map(Number);
         const monthEvents = eventsByMonth[monthKey].sort((a, b) =>
           new Date(a.startDate) - new Date(b.startDate)
         );
-
         const sectionId = MONTH_IDS[month] ? ` id="${MONTH_IDS[month]}"` : '';
-        html += `
-          <section class="month-section"${sectionId}>
-            <h2 class="month-header">${FULL_MONTH_NAMES[month]} ${year}</h2>
-            <div class="event-cards">
-        `;
-
+        html += `<section class="month-section"${sectionId}><h2 class="month-header">${FULL_MONTH_NAMES[month]} ${year}</h2><div class="event-cards">`;
         monthEvents.forEach(event => {
           const { dateText, year } = formatDateRange(event);
-          const monthNum = new Date(event.startDate).getMonth();
-          const bannerColor = MONTH_COLORS[monthNum] || '#003F6B';
-          const priceTag = event.price === 'free'
-            ? '<span class="tag tag--free">Free</span>'
-            : '<span class="tag tag--ticketed">Ticketed</span>';
-          const linkIcon = event.link
-            ? `<span class="event-card__link-icon">${EXTERNAL_LINK_ICON}</span>`
-            : '';
-          const cardOpen = event.link
-            ? `<a href="${event.link}" target="_blank" rel="noopener noreferrer" class="event-card">`
-            : `<article class="event-card">`;
-          const cardClose = event.link ? `</a>` : `</article>`;
-
-          html += `
-            ${cardOpen}
-              <div class="event-card__banner" style="background-color:${bannerColor}">
-                <span class="event-card__date-main">${dateText}</span>
-                <span class="event-card__date-year">${year}</span>
-                ${linkIcon}
-              </div>
-              <div class="event-card__body">
-                <h3 class="event-card__name">${event.name}</h3>
-                <div class="event-card__footer">
-                  <div class="event-card__location">
-                    ${PIN_ICON}
-                    <span>${event.location}</span>
-                  </div>
-                  <div class="event-card__tags">
-                    ${priceTag}
-                    <span class="tag tag--category">${event.category}</span>
-                  </div>
-                </div>
-              </div>
-            ${cardClose}
-          `;
+          const bannerColor = MONTH_COLORS[new Date(event.startDate).getMonth()] || '#003F6B';
+          html += makeCard(event, bannerColor, dateText, year);
         });
-
-        html += '</div>';
-        html += '</section>';
+        html += '</div></section>';
       });
 
-      // Recurring events section
-      if (allRecurring.length > 0) {
+      if (recurringEvents.length > 0) {
         html += `<section class="month-section" id="month-recurring"><h2 class="month-header">Recurring Events</h2><div class="event-cards">`;
-        allRecurring.forEach(event => {
-          const priceTag = event.price === 'free'
-            ? '<span class="tag tag--free">Free</span>'
-            : '<span class="tag tag--ticketed">Ticketed</span>';
-          const linkIcon = event.link
-            ? `<span class="event-card__link-icon">${EXTERNAL_LINK_ICON}</span>`
-            : '';
-          const cardOpen = event.link
-            ? `<a href="${event.link}" target="_blank" rel="noopener noreferrer" class="event-card">`
-            : `<article class="event-card">`;
-          const cardClose = event.link ? `</a>` : `</article>`;
-          html += `
-            ${cardOpen}
-              <div class="event-card__banner" style="background-color:#003F6B">
-                <span class="event-card__date-main">${event.schedule}</span>
-                ${linkIcon}
-              </div>
-              <div class="event-card__body">
-                <h3 class="event-card__name">${event.name}</h3>
-                <div class="event-card__footer">
-                  <div class="event-card__location">
-                    ${PIN_ICON}
-                    <span>${event.location}</span>
-                  </div>
-                  <div class="event-card__tags">
-                    ${priceTag}
-                    <span class="tag tag--category">${event.category}</span>
-                  </div>
-                </div>
-              </div>
-            ${cardClose}
-          `;
+        recurringEvents.forEach(event => {
+          html += makeCard(event, '#003F6B', event.schedule, '');
         });
         html += '</div></section>';
       }
@@ -256,28 +217,38 @@
       container.innerHTML = html;
     }
 
-    function filterEvents(filter) {
-      currentFilter = filter;
+    function applyFilters() {
+      const month    = document.getElementById('filter-month').value;
+      const category = document.getElementById('filter-category').value;
 
-      if (filter === 'all') {
-        renderEvents(allEvents);
-      } else if (filter === 'free') {
-        renderEvents(allEvents.filter(e => e.price === 'free'));
-      } else {
-        renderEvents(allEvents.filter(e => e.category === filter));
+      let filteredEvents = month === 'recurring' ? [] : allEvents;
+
+      if (month !== 'all' && month !== 'recurring') {
+        filteredEvents = filteredEvents.filter(e =>
+          new Date(e.startDate).getMonth() === MONTH_NUMS[month]
+        );
       }
+
+      if (category === 'free') {
+        filteredEvents = filteredEvents.filter(e => e.price === 'free');
+      } else if (category !== 'all') {
+        filteredEvents = filteredEvents.filter(e => e.category === category);
+      }
+
+      let filteredRecurring = (month === 'all' || month === 'recurring') ? [...allRecurring] : [];
+
+      if (filteredRecurring.length > 0 && category !== 'all') {
+        filteredRecurring = category === 'free'
+          ? filteredRecurring.filter(e => e.price === 'free')
+          : filteredRecurring.filter(e => e.category === category);
+      }
+
+      renderEvents(filteredEvents, filteredRecurring);
     }
 
-    // Initialize filters
-    document.querySelectorAll('.filter-tag').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('active'));
-        button.classList.add('active');
-        filterEvents(button.dataset.filter);
-      });
-    });
+    document.getElementById('filter-month').addEventListener('change', applyFilters);
+    document.getElementById('filter-category').addEventListener('change', applyFilters);
 
-    // Load events on page load
     loadEvents();
   </script>
 

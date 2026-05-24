@@ -1,14 +1,14 @@
 {
   "events": [
     {
-      "id": "mayfest-2026",
-      "name": "Mayfest",
-      "startDate": "2026-05-15",
-      "endDate": "2026-05-17",
-      "location": "Lincoln Park",
+      "id": "maifest-2026",
+      "name": "Maifest Chicago",
+      "startDate": "2026-05-29",
+      "endDate": "2026-05-31",
+      "location": "Lincoln Square",
       "price": "free",
       "category": "Festival",
-      "link": "https://www.starevents.com"
+      "link": "https://www.maifestchicago.com"
     },
     {
       "id": "ravinia-opener-2026",
