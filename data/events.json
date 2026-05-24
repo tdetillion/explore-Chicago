@@ -266,7 +266,7 @@
       "location": "Lincoln Park",
       "price": "free",
       "category": "Arts & Culture",
-      "link": "https://www.chicagoparkdistrict.com"
+      "link": "https://www.chicagoparkdistrict.com/movies-parks"
     },
     {
       "id": "lincoln-park-zoo-2026",
@@ -280,7 +280,7 @@
     {
       "id": "lincoln-park-conservatory-2026",
       "name": "Lincoln Park Conservatory",
-      "schedule": "Open daily",
+      "schedule": "Open daily, 10am–5pm",
       "location": "Lincoln Park",
       "price": "free",
       "category": "Outdoor",
