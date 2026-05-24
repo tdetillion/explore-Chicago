@@ -7,7 +7,8 @@
       "endDate": "2026-05-17",
       "location": "Lincoln Park",
       "price": "free",
-      "category": "Festival"
+      "category": "Festival",
+      "link": "https://www.starevents.com"
     },
     {
       "id": "ravinia-opener-2026",
@@ -17,7 +18,8 @@
       "dateTBA": true,
       "location": "Highland Park",
       "price": "ticketed",
-      "category": "Music"
+      "category": "Music",
+      "link": "https://www.ravinia.org"
     },
     {
       "id": "greek-fest-2026",
@@ -26,7 +28,8 @@
       "endDate": "2026-06-07",
       "location": "Lincoln Park",
       "price": "free",
-      "category": "Food & Drink"
+      "category": "Food & Drink",
+      "link": "https://lincolnparkgreekfest.com"
     },
     {
       "id": "grant-park-music-2026",
@@ -35,7 +38,8 @@
       "endDate": "2026-08-15",
       "location": "Millennium Park",
       "price": "free",
-      "category": "Music"
+      "category": "Music",
+      "link": "https://www.grantparkmusicfestival.com"
     },
     {
       "id": "midsommarfest-2026",
@@ -44,7 +48,8 @@
       "endDate": "2026-06-14",
       "location": "Andersonville",
       "price": "free",
-      "category": "Festival"
+      "category": "Festival",
+      "link": "https://andersonville.org/midsommarfest"
     },
     {
       "id": "pride-parade-2026",
@@ -53,7 +58,8 @@
       "endDate": null,
       "location": "Lakeview & Lincoln Park",
       "price": "free",
-      "category": "Festival"
+      "category": "Festival",
+      "link": "https://pridechicago.org"
     },
     {
       "id": "taste-of-chicago-2026",
@@ -62,7 +68,8 @@
       "endDate": "2026-07-12",
       "location": "Grant Park",
       "price": "free",
-      "category": "Food & Drink"
+      "category": "Food & Drink",
+      "link": "https://www.tasteofchicago.us"
     },
     {
       "id": "smokeout-2026",
@@ -71,7 +78,8 @@
       "endDate": "2026-07-12",
       "location": "United Center area",
       "price": "ticketed",
-      "category": "Music"
+      "category": "Music",
+      "link": "https://www.windycitysmokeout.com"
     },
     {
       "id": "taste-lincoln-ave-2026",
@@ -81,7 +89,8 @@
       "estimated": true,
       "location": "Lincoln Park",
       "price": "ticketed",
-      "category": "Food & Drink"
+      "category": "Food & Drink",
+      "link": "https://chicagoevents.com/events/taste-of-lincoln-avenue"
     },
     {
       "id": "lollapalooza-2026",
@@ -90,7 +99,8 @@
       "endDate": "2026-08-02",
       "location": "Grant Park",
       "price": "ticketed",
-      "category": "Music"
+      "category": "Music",
+      "link": "https://www.lollapalooza.com"
     },
     {
       "id": "market-days-2026",
@@ -99,7 +109,8 @@
       "endDate": "2026-08-09",
       "location": "Lakeview",
       "price": "ticketed",
-      "category": "Festival"
+      "category": "Festival",
+      "link": "https://northalsted.com/main-events/market-days"
     },
     {
       "id": "air-water-show-2026",
@@ -108,7 +119,8 @@
       "endDate": "2026-08-16",
       "location": "North Avenue Beach",
       "price": "free",
-      "category": "Outdoor"
+      "category": "Outdoor",
+      "link": "https://www.chicagoairandwatershow.us"
     },
     {
       "id": "bucktown-arts-2026",
@@ -118,7 +130,8 @@
       "estimated": true,
       "location": "Bucktown",
       "price": "free",
-      "category": "Arts & Culture"
+      "category": "Arts & Culture",
+      "link": "https://www.bucktownartsfest.com"
     },
     {
       "id": "taco-fest-2026",
@@ -128,7 +141,8 @@
       "estimated": true,
       "location": "Lakeview",
       "price": "ticketed",
-      "category": "Food & Drink"
+      "category": "Food & Drink",
+      "link": "https://chicagoevents.com/events/lakeview-taco-fest"
     },
     {
       "id": "house-music-fest-2026",
@@ -137,7 +151,8 @@
       "endDate": "2026-08-30",
       "location": "Millennium Park",
       "price": "free",
-      "category": "Music"
+      "category": "Music",
+      "link": "https://www.chicagohousemusicfestival.org"
     },
     {
       "id": "jazz-fest-2026",
@@ -146,7 +161,8 @@
       "endDate": "2026-09-06",
       "location": "Millennium Park",
       "price": "free",
-      "category": "Music"
+      "category": "Music",
+      "link": "https://www.chicagojazzfestival.us"
     },
     {
       "id": "bike-the-drive-2026",
@@ -155,7 +171,8 @@
       "endDate": null,
       "location": "Lake Shore Drive",
       "price": "free",
-      "category": "Outdoor"
+      "category": "Outdoor",
+      "link": "https://www.activetransportation.org/bikethedrive"
     },
     {
       "id": "chicago-gourmet-2026",
@@ -165,7 +182,8 @@
       "dateTBA": true,
       "location": "Millennium Park",
       "price": "ticketed",
-      "category": "Food & Drink"
+      "category": "Food & Drink",
+      "link": "https://www.chicagogourmet.org"
     },
     {
       "id": "wine-fest-2026",
@@ -174,7 +192,8 @@
       "endDate": "2026-10-11",
       "location": "Lincoln Park",
       "price": "ticketed",
-      "category": "Food & Drink"
+      "category": "Food & Drink",
+      "link": "https://www.lincolnparkwinefest.com"
     },
     {
       "id": "open-house-chicago-2026",
@@ -184,7 +203,8 @@
       "estimated": true,
       "location": "Citywide",
       "price": "free",
-      "category": "Arts & Culture"
+      "category": "Arts & Culture",
+      "link": "https://openhousechicago.org"
     },
     {
       "id": "film-fest-2026",
@@ -194,7 +214,8 @@
       "estimated": true,
       "location": "Various Theaters",
       "price": "ticketed",
-      "category": "Arts & Culture"
+      "category": "Arts & Culture",
+      "link": "https://www.chicagofilmfestival.com"
     },
     {
       "id": "spooky-zoo-2026",
@@ -204,7 +225,8 @@
       "estimated": true,
       "location": "Lincoln Park Zoo",
       "price": "free",
-      "category": "Outdoor"
+      "category": "Outdoor",
+      "link": "https://www.lpzoo.org"
     },
     {
       "id": "nightmare-clark-2026",
@@ -214,7 +236,8 @@
       "estimated": true,
       "location": "Lakeview",
       "price": "ticketed",
-      "category": "Festival"
+      "category": "Festival",
+      "link": "https://www.nightmareonclarkstreet.com"
     }
   ],
   "recurring": [
@@ -224,7 +247,8 @@
       "schedule": "May–Sep",
       "location": "Navy Pier",
       "price": "free",
-      "category": "Music"
+      "category": "Music",
+      "link": "https://www.navypier.org"
     },
     {
       "id": "mp-music-series-2026",
@@ -232,7 +256,8 @@
       "schedule": "Jun 15–Aug 6",
       "location": "Jay Pritzker Pavilion",
       "price": "free",
-      "category": "Music"
+      "category": "Music",
+      "link": "https://www.millenniumpark.org"
     },
     {
       "id": "mp-film-series-2026",
@@ -240,7 +265,8 @@
       "schedule": "Jul 1–Aug 19",
       "location": "Jay Pritzker Pavilion",
       "price": "free",
-      "category": "Arts & Culture"
+      "category": "Arts & Culture",
+      "link": "https://www.millenniumpark.org"
     },
     {
       "id": "farmers-markets-2026",
@@ -248,7 +274,8 @@
       "schedule": "May–Oct",
       "location": "Citywide",
       "price": "free",
-      "category": "Outdoor"
+      "category": "Outdoor",
+      "link": "https://www.chicagofarmersmarkets.us"
     },
     {
       "id": "mp-workouts-2026",
@@ -256,7 +283,8 @@
       "schedule": "Saturdays May 16–Sep 5",
       "location": "Millennium Park",
       "price": "free",
-      "category": "Outdoor"
+      "category": "Outdoor",
+      "link": "https://www.millenniumpark.org"
     },
     {
       "id": "outdoor-movies-lp-2026",
@@ -264,7 +292,8 @@
       "schedule": "Summer 2026",
       "location": "Lincoln Park",
       "price": "free",
-      "category": "Arts & Culture"
+      "category": "Arts & Culture",
+      "link": "https://www.chicagoparkdistrict.com"
     }
   ]
 }
