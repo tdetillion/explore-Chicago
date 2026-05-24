@@ -19,10 +19,6 @@
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,6 93,75 7,75"/><polygon points="50,94 7,25 93,25"/></svg>
       </span>
     </a>
-    <nav class="header__nav">
-      <a href="index.html" class="header__nav-link active">Events</a>
-      <a href="venues.html" class="header__nav-link">Venues</a>
-    </nav>
   </header>
 
   <!-- Hero -->
@@ -191,6 +187,14 @@
 
       let html = '';
 
+      if (recurringEvents.length > 0) {
+        html += `<section class="month-section" id="month-recurring"><h2 class="month-header">Recurring Events</h2><div class="event-cards">`;
+        recurringEvents.forEach(event => {
+          html += makeCard(event, '#003F6B', event.schedule, '');
+        });
+        html += '</div></section>';
+      }
+
       Object.keys(eventsByMonth).sort().forEach(monthKey => {
         const [year, month] = monthKey.split('-').map(Number);
         const monthEvents = eventsByMonth[monthKey].sort((a, b) =>
@@ -205,14 +209,6 @@
         });
         html += '</div></section>';
       });
-
-      if (recurringEvents.length > 0) {
-        html += `<section class="month-section" id="month-recurring"><h2 class="month-header">Recurring Events</h2><div class="event-cards">`;
-        recurringEvents.forEach(event => {
-          html += makeCard(event, '#003F6B', event.schedule, '');
-        });
-        html += '</div></section>';
-      }
 
       container.innerHTML = html;
     }
