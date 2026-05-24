@@ -19,6 +19,10 @@
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,6 93,75 7,75"/><polygon points="50,94 7,25 93,25"/></svg>
       </span>
     </a>
+    <nav class="header__nav">
+      <a href="index.html" class="header__nav-link active">Events</a>
+      <a href="venues.html" class="header__nav-link">Venues</a>
+    </nav>
   </header>
 
   <!-- Hero -->
@@ -28,6 +32,23 @@
       <p class="hero__subline">Discover festivals, concerts, and activities across the city</p>
     </div>
   </section>
+
+  <!-- Month Jump Nav -->
+  <nav class="month-nav">
+    <a href="#month-may" class="month-nav__link">May</a>
+    <span class="month-nav__sep">·</span>
+    <a href="#month-jun" class="month-nav__link">Jun</a>
+    <span class="month-nav__sep">·</span>
+    <a href="#month-jul" class="month-nav__link">Jul</a>
+    <span class="month-nav__sep">·</span>
+    <a href="#month-aug" class="month-nav__link">Aug</a>
+    <span class="month-nav__sep">·</span>
+    <a href="#month-sep" class="month-nav__link">Sep</a>
+    <span class="month-nav__sep">·</span>
+    <a href="#month-oct" class="month-nav__link">Oct</a>
+    <span class="month-nav__sep">·</span>
+    <a href="#month-recurring" class="month-nav__link">Recurring</a>
+  </nav>
 
   <!-- Filter Tags -->
   <div class="filters">
@@ -64,6 +85,8 @@
   <script>
     const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const FULL_MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    const MONTH_IDS = { 4: 'month-may', 5: 'month-jun', 6: 'month-jul', 7: 'month-aug', 8: 'month-sep', 9: 'month-oct' };
 
     const MONTH_COLORS = {
       4: '#2D7A3A',
@@ -143,8 +166,9 @@
           new Date(a.startDate) - new Date(b.startDate)
         );
 
+        const sectionId = MONTH_IDS[month] ? ` id="${MONTH_IDS[month]}"` : '';
         html += `
-          <section class="month-section">
+          <section class="month-section"${sectionId}>
             <h2 class="month-header">${FULL_MONTH_NAMES[month]} ${year}</h2>
             <div class="event-cards">
         `;

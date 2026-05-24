@@ -30,6 +30,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -48,6 +49,9 @@ a {
 .header {
   background-color: var(--navy);
   padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header__logo {
@@ -72,6 +76,22 @@ a {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 600;
+  color: var(--white);
+}
+
+.header__nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header__nav-link {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.15s ease;
+}
+
+.header__nav-link:hover,
+.header__nav-link.active {
   color: var(--white);
 }
 
@@ -148,6 +168,50 @@ a {
   background-color: var(--navy);
   color: var(--white);
   border-color: var(--navy);
+}
+
+/* ===== MONTH JUMP NAV ===== */
+.month-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.125rem;
+  padding: 0.625rem 2rem;
+  background-color: var(--cream);
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.month-nav__link {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--navy);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.month-nav__link:hover {
+  background-color: rgba(0, 63, 107, 0.08);
+}
+
+.month-nav__sep {
+  font-size: 0.8125rem;
+  color: var(--border-gray);
+  padding: 0 0.125rem;
+  user-select: none;
+}
+
+/* ===== VENUE CARDS ===== */
+.venue-card__desc {
+  font-size: 0.75rem;
+  color: var(--muted-text);
+  line-height: 1.4;
+  margin: 0 0 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ===== MAIN CONTENT ===== */
