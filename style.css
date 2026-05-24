@@ -280,6 +280,11 @@ a.event-card:hover .event-card__link-icon {
   text-overflow: ellipsis;
 }
 
+.event-card__icon {
+  margin-right: 0.3em;
+  font-style: normal;
+}
+
 /* Location + tags on the same row */
 .event-card__footer {
   display: flex;

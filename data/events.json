@@ -242,33 +242,6 @@
   ],
   "recurring": [
     {
-      "id": "live-on-lake-2026",
-      "name": "Live on the Lake",
-      "schedule": "May–Sep",
-      "location": "Navy Pier",
-      "price": "free",
-      "category": "Music",
-      "link": "https://www.navypier.org"
-    },
-    {
-      "id": "mp-music-series-2026",
-      "name": "Millennium Park Summer Music Series",
-      "schedule": "Jun 15–Aug 6",
-      "location": "Jay Pritzker Pavilion",
-      "price": "free",
-      "category": "Music",
-      "link": "https://www.millenniumpark.org"
-    },
-    {
-      "id": "mp-film-series-2026",
-      "name": "Millennium Park Summer Film Series",
-      "schedule": "Jul 1–Aug 19",
-      "location": "Jay Pritzker Pavilion",
-      "price": "free",
-      "category": "Arts & Culture",
-      "link": "https://www.millenniumpark.org"
-    },
-    {
       "id": "farmers-markets-2026",
       "name": "Chicago Farmers Markets",
       "schedule": "May–Oct",
@@ -294,6 +267,24 @@
       "price": "free",
       "category": "Arts & Culture",
       "link": "https://www.chicagoparkdistrict.com"
+    },
+    {
+      "id": "lincoln-park-zoo-2026",
+      "name": "Lincoln Park Zoo",
+      "schedule": "Open daily, 10am–5pm",
+      "location": "Lincoln Park",
+      "price": "free",
+      "category": "Outdoor",
+      "link": "https://www.lpzoo.org"
+    },
+    {
+      "id": "lincoln-park-conservatory-2026",
+      "name": "Lincoln Park Conservatory",
+      "schedule": "Open daily",
+      "location": "Lincoln Park",
+      "price": "free",
+      "category": "Outdoor",
+      "link": "https://www.chicagoparkdistrict.com/parks-facilities/lincoln-park-conservatory"
     }
   ]
 }
